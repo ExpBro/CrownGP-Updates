@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: crowngp-private-updates
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: gunicorn server:application --bind 0.0.0.0:$PORT
+    healthCheckPath: /healthz
+    envVars:
+      - key: UPDATE_ACCESS_TOKEN
+        sync: false
