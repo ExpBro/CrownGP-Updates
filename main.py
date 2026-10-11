@@ -1405,3 +1405,4 @@ for car in all_cars:
     reset_car_to_grid(car,GRID_SIZE-1 if car.is_player else cpus.index(car))
 show_menu()
 app.run()
+#HELP
